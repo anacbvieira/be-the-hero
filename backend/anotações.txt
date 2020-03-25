@@ -1,0 +1,30 @@
+Médotos HTTP:
+    GET: Busca/lista uma informação no back-end
+    POST: Cria uma informação no back-end
+    PUT: Altera uma informação no back-end
+    DELETE: Deleta uma informação no back-end
+
+Tipos de parâmetros:
+    QUERY PARAMS: Parametros nomeados enviados na rota após p "?" (Filtros, paginação)
+    ROUTE PARAMS: Parametros utilizados para identificar recursos
+    REQUEST BODY: Corpo da requisição, utilizado para criar ou alterar recursos (formato JSON)
+
+Banco de dados:
+    O banco escolhido para ser usado foi o SQLite. Abaixo estão os comandos que usamos para criar:
+    npm install knex
+    npm install sqlite3
+    npx knex init
+    npx knex migrate:make create_ongs 
+
+    Dentro do arquivo criado no ultimo comando tem-se o método exports.up que é responsável 
+pela criação da tabela. Já o método exports.down é usado quando algo der errado e é necessário 
+desfazer alguma coisa.
+
+    npx knex migrate:latest (executa o comando para criar a tabla)
+
+    Para executar o método exports down, basta executar o comando abaixo: (ele desfaz a ultima migrate feita)
+
+    npx knex migrate:rollback
+
+    Vamos usar o método crypo do node que é usado para criar criptografia, mas ele será usado
+para gerar uma string aleatória.
